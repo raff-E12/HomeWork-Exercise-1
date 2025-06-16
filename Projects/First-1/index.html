@@ -9,12 +9,23 @@
 </head>
 <body>
     <div class="container-lg p-3 d-flex" id="box-cont">
-        <div class="card">
+        <div class="container-lg p-3 d-flex txt-center bg-light"><h2>Lettera del giorno</h2></div>
+        <div class="card p-3">
             <div class="card-body">
                 <h2>Testo del Giorno</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam eaque vitae 
                     tempore voluptatibus maiores est libero recusandae magni 
                     nobis tempora accusamus cupiditate sed, beatae numquam iure. Iste nam perferendis error?</p>
+            </div>
+        </div>
+        <div class="container-lg bg-secondary-subtle p-2 radius">
+            <div class="container-fluid btn-show">
+                <button class="btn btn-secondary" id="btn-show">Mostra Commenti</button>
+                <button class="btn btn-secondary" id="left">Left</button>
+                <button class="btn btn-secondary" id="right">Right</button>
+            </div>
+            <div class="container-md small-box d-flex">
+                <p class="mb-0" id="skip"><b>Skip:</b> 0</p>
             </div>
         </div>
         <div class="container-lg bg-secondary-subtle" id="comment-box">

@@ -33,3 +33,45 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.radius{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.txt-center{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.small-box{
+    justify-content: flex-end;
+}
+
+.btn-show{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#comment-box.close{
+    height: 0px;
+    overflow: hidden;
+    position: relative;
+}
+
+#comment-box.close::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    background-color: #868686;
+    z-index: 9999;
+}

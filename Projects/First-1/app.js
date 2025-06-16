@@ -11,12 +11,32 @@
  * 
  */
 
-    const limit = 10;
-    const skip = 10;
-    const url = `https://dummyjson.com/comments?limit=${limit}&skip=${skip}&select=body,postId`;
+    const left_btn = document.getElementById("left");
+    const right_btn = document.getElementById("right");
+    const skip_index = document.getElementById("skip");
+    
+    let limit = 10;
+    let skip = 12;
+
+    left_btn.addEventListener("click", ()=>{
+        skip--;
+        if (skip >= 0) {
+            skip_index.innerHTML = `<b>Skip:</b> ${skip}`;
+            CommentApiBlock();
+        }
+    })
+
+    right_btn.addEventListener("click", ()=>{
+        skip++;
+       if (skip <= 20) {
+          skip_index.innerHTML = `<b>Skip:</b> ${skip}`;
+          CommentApiBlock();
+       }
+    })
     
     async function CommentApiBlock(){
         try {
+            const url = `https://dummyjson.com/comments?limit=${limit}&skip=${skip}&select=body,postId`;
             const parent_element = document.getElementById("comment-sc");
 
             parent_element.innerHTML =  `<p>Loading..</p>`;
@@ -57,7 +77,21 @@
         }
     }
 
-    CommentApiBlock()
+    window.addEventListener("DOMContentLoaded", () => {
+        skip_index.innerHTML = `<b>Skip:</b> ${skip}`;
+        CommentApiBlock();
+    });
+
+    const btn_close = document.getElementById("btn-show");
+    const comment_section = document.getElementById("comment-box");
+
+    btn_close.addEventListener("click", () =>{
+        if (!comment_section.classList.contains("close")) {
+            comment_section.classList.add("close");
+        } else {
+            comment_section.classList.remove("close");
+        }
+    })
 
     // function PromiseFun() {
     //     let promise = new Promise((revolve, reject) => {
